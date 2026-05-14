@@ -1,0 +1,205 @@
+fileFormatVersion: 2
+guid: 9ae14496b5392644fbbcc128ace1e1d7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4158804890048198329
+    second: tarte myrtille carotte_0
+  - first:
+      213: -9129052358441324507
+    second: tarte myrtille carotte_1
+  - first:
+      213: 3675902683619597632
+    second: tarte myrtille carotte_2
+  - first:
+      213: -3917285402666638029
+    second: tarte myrtille carotte_3
+  - first:
+      213: 6391805721685456749
+    second: tarte myrtille carotte_4
+  - first:
+      213: -8316075730548768379
+    second: tarte myrtille carotte_5
+  - first:
+      213: 1309843736265451792
+    second: tarte myrtille carotte_6
+  - first:
+      213: -2015029082064110755
+    second: tarte myrtille carotte_7
+  - first:
+      213: -3547061049250789222
+    second: tarte myrtille carotte_8
+  - first:
+      213: -3881673265591864022
+    second: tarte myrtille carotte_9
+  - first:
+      213: -8743433160976844411
+    second: tarte myrtille carotte_10
+  - first:
+      213: 2541449350331767625
+    second: tarte myrtille carotte_11
+  - first:
+      213: -8773255068217699197
+    second: tarte myrtille carotte_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tarte myrtille carotte_4
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 388
+        width: 399
+        height: 313
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d67fe5a407144b850800000000000000
+      internalID: 6391805721685456749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ac975e367f569e9469edc6bba83f28f9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tarte myrtille carotte_0: -4158804890048198329
+      tarte myrtille carotte_1: -9129052358441324507
+      tarte myrtille carotte_10: -8743433160976844411
+      tarte myrtille carotte_11: 2541449350331767625
+      tarte myrtille carotte_12: -8773255068217699197
+      tarte myrtille carotte_13: 561294125
+      tarte myrtille carotte_2: 3675902683619597632
+      tarte myrtille carotte_3: -3917285402666638029
+      tarte myrtille carotte_4: 6391805721685456749
+      tarte myrtille carotte_5: -8316075730548768379
+      tarte myrtille carotte_6: 1309843736265451792
+      tarte myrtille carotte_7: -2015029082064110755
+      tarte myrtille carotte_8: -3547061049250789222
+      tarte myrtille carotte_9: -3881673265591864022
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

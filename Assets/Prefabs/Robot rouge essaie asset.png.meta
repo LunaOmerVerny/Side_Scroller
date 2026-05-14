@@ -1,0 +1,280 @@
+fileFormatVersion: 2
+guid: fd5128d208391e540ac2739206f16b30
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3242503400731074674
+    second: Robot rouge essaie asset_0
+  - first:
+      213: 7208942895831444062
+    second: Robot rouge essaie asset_1
+  - first:
+      213: 4416952998230396399
+    second: Robot rouge essaie asset_2
+  - first:
+      213: 6316534255588609431
+    second: Robot rouge essaie asset_3
+  - first:
+      213: -2844363944165594497
+    second: Robot rouge essaie asset_4
+  - first:
+      213: 295781272494955555
+    second: Robot rouge essaie asset_5
+  - first:
+      213: 1102021021509050218
+    second: Robot rouge essaie asset_6
+  - first:
+      213: -4686849515203251229
+    second: Robot rouge essaie asset_7
+  - first:
+      213: 7096490476437760028
+    second: Robot rouge essaie asset_8
+  - first:
+      213: -3526934920975877471
+    second: Robot rouge essaie asset_9
+  - first:
+      213: 8728497325543468136
+    second: Robot rouge essaie asset_10
+  - first:
+      213: -4686958813389396829
+    second: Robot rouge essaie asset_11
+  - first:
+      213: -8022379209328369063
+    second: Robot rouge essaie asset_12
+  - first:
+      213: -7618516897830328119
+    second: Robot rouge essaie asset_13
+  - first:
+      213: 1633051625911788796
+    second: Robot rouge essaie asset_14
+  - first:
+      213: -5522882440260392712
+    second: Robot rouge essaie asset_15
+  - first:
+      213: 7400812272498315215
+    second: Robot rouge essaie asset_16
+  - first:
+      213: -2104813461123796698
+    second: Robot rouge essaie asset_17
+  - first:
+      213: 6796105887437098035
+    second: Robot rouge essaie asset_18
+  - first:
+      213: 6115278483523469185
+    second: Robot rouge essaie asset_19
+  - first:
+      213: -4729983054753968269
+    second: Robot rouge essaie asset_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Robot rouge essaie asset_3
+      rect:
+        serializedVersion: 2
+        x: 1203
+        y: 57
+        width: 534
+        height: 986
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79d02f36076d8a750800000000000000
+      internalID: 6316534255588609431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot rouge essaie asset_15
+      rect:
+        serializedVersion: 2
+        x: 1732
+        y: 127
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f8690c9ea7ca53b0800000000000000
+      internalID: -5522882440260392712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robot rouge essaie asset_20
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 44
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37fc5c3e879bb5eb0800000000000000
+      internalID: -4729983054753968269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a5f1b9ebdba7c0845a6e8647e3219f68
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Robot rouge essaie asset_0: -3242503400731074674
+      Robot rouge essaie asset_1: 7208942895831444062
+      Robot rouge essaie asset_10: 8728497325543468136
+      Robot rouge essaie asset_11: -4686958813389396829
+      Robot rouge essaie asset_12: -8022379209328369063
+      Robot rouge essaie asset_13: -7618516897830328119
+      Robot rouge essaie asset_14: 1633051625911788796
+      Robot rouge essaie asset_15: -5522882440260392712
+      Robot rouge essaie asset_16: 7400812272498315215
+      Robot rouge essaie asset_17: -2104813461123796698
+      Robot rouge essaie asset_18: 6796105887437098035
+      Robot rouge essaie asset_19: 6115278483523469185
+      Robot rouge essaie asset_2: 4416952998230396399
+      Robot rouge essaie asset_20: -4729983054753968269
+      Robot rouge essaie asset_3: 6316534255588609431
+      Robot rouge essaie asset_4: -2844363944165594497
+      Robot rouge essaie asset_5: 295781272494955555
+      Robot rouge essaie asset_6: 1102021021509050218
+      Robot rouge essaie asset_7: -4686849515203251229
+      Robot rouge essaie asset_8: 7096490476437760028
+      Robot rouge essaie asset_9: -3526934920975877471
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
