@@ -31,11 +31,12 @@ public class ParallaxLayer
 
     public void Move (Vector3 delta, bool vertical, float smoothing)
     {
-        float moveX = delta.x * (1f - speedX);
-        float moveY = vertical ? delta.y * (1f - speedY) : 0f;
+        float moveX = delta.x * speedX;
+        float moveY = vertical ? delta.y * speedY : 0f;
+        //float moveY = vertical ? delta.y * (1f - speedY) : 0f;
 
         _targetposition += new Vector3(moveX, moveY, 0f);
-        _transform.position = smoothing > 0f ? Vector3.Lerp(_transform.position, _targetposition, smoothing): _targetposition;
+        _transform.position = smoothing > 1f ? Vector3.Lerp(_transform.position, _targetposition, smoothing * Time.deltaTime): _targetposition;
          
         if (_infiniteX)
         {

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -23,7 +24,7 @@ public class GrabObject : MonoBehaviour
 
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-
+            collision.gameObject.GetComponent<Rigidbody2D>().constraints |= RigidbodyConstraints2D.FreezePositionX;
 
             collision.gameObject.transform.position = target.position + new Vector3(0f, heldObject.Count * 1, 0f);
             heldObject.Add(collision.gameObject);
@@ -40,9 +41,10 @@ public class GrabObject : MonoBehaviour
         {
             GameObject objToDrop = heldObject[heldObject.Count - 1];
             objToDrop.transform.SetParent(null);
-            objToDrop.transform.gameObject.GetComponent<BoxCollider2D>().enabled = true;
+            //objToDrop.transform.gameObject.GetComponent<BoxCollider2D>().enabled = true;
             objToDrop.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             heldObject.RemoveAt(heldObject.Count - 1);
+            StartCoroutine(EnableColliderDelayed(objToDrop));
         }
 
         float moveX = Input.GetAxisRaw("Horizontal");
@@ -52,6 +54,12 @@ public class GrabObject : MonoBehaviour
         else if (moveX < 0)
             transform.localScale = new Vector3(-1, 1, 1);
     }
+    IEnumerator EnableColliderDelayed(GameObject obj)
+    {
+        yield return new WaitForSeconds(0.3f); // laisse le temps de s'éloigner
+        if (obj != null)
+            obj.GetComponent<BoxCollider2D>().enabled = true;
+    }
 
     void TryPickupFromSlot()
     {
@@ -60,7 +68,7 @@ public class GrabObject : MonoBehaviour
 
         foreach (var slot in cachedSlots)
         {
-            if (slot.IsEmpty) continue; // ✅ cherche uniquement les slots occupés
+            if (slot.IsEmpty) continue; // cherche uniquement les slots occupés
 
             float dist = Vector2.Distance(transform.position, slot.transform.position);
             if (dist < nearestDist)
@@ -70,9 +78,9 @@ public class GrabObject : MonoBehaviour
             }
         }
 
-        if (nearest == null) return; // aucun slot occupé proche, le grab par collision prend le relais
+        if (nearest == null) return; 
 
-        // ✅ récupère l'objet du slot
+        
         GameObject obj = nearest.currentItem;
         nearest.currentItem = null;
 

@@ -10,7 +10,7 @@ public class Paralax : MonoBehaviour
 
     [Tooltip("Lissage du mouvement (0 = aucun, 1 = instantané)")]
     [Range(0f, 1f)]
-    public float smoothing = 0.1f;
+    public float smoothing = 1f;
 
     private ParallaxLayer[] layers;
     private Vector3 previousCamPos;

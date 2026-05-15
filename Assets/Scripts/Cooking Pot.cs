@@ -14,11 +14,15 @@ public class CookingPot : MonoBehaviour
 
     public List<string> recipeBook = new List<string>();
 
+    private bool isCooking = false;
+
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if (isCooking) return;
 
         if (collision.gameObject.GetComponent<Ingredients>())
         {
+            if (heldObject.Contains(collision.gameObject)) return;
             collision.gameObject.transform.SetParent(transform);
 
             //Debug.Log("Collided with " + collision.gameObject.name);
@@ -31,7 +35,7 @@ public class CookingPot : MonoBehaviour
             collision.gameObject.transform.position = target.position + new Vector3(heldObject.Count * 1, 0f, 0f);
             heldObject.Add(collision.gameObject);
 
-            collision.gameObject.transform.SetParent(transform);
+          
             
         }
 
@@ -47,29 +51,52 @@ public class CookingPot : MonoBehaviour
 
     IEnumerator cooking()
     {
+        isCooking=true;
         int myRecipeIndex = CheckRecipe();
         yield return new WaitForSeconds(2f);
 
         foreach (GameObject obj in heldObject)
         {
-            Destroy(obj);
+            if (obj != null) Destroy(obj);
 
         }
+        heldObject.Clear();
 
         yield return new WaitForSeconds(2f);
         //LANCE L'naimation
 
-        GameObject h; 
+        Vector3 spawnPos = transform.position + new Vector3(0f, 1.5f, 0f);
+        GameObject h;
 
-         if (myRecipeIndex >= 0 ) h =  Instantiate(recipe[myRecipeIndex],transform.position, Quaternion.identity);
-        else  h = Instantiate(TrashRecipe,transform.position, Quaternion.identity);
+        //if (myRecipeIndex >= 0 ) h =  Instantiate(recipe[myRecipeIndex],transform.position, Quaternion.identity);
+        //else  h = Instantiate(TrashRecipe,transform.position, Quaternion.identity);
+
+        if (myRecipeIndex >= 0)
+            h = Instantiate(recipe[myRecipeIndex], transform.position + new Vector3(0f, 1.5f, 0f), Quaternion.identity);
+        else
+            h = Instantiate(TrashRecipe, transform.position + new Vector3(0f, 1.5f, 0f), Quaternion.identity);
+
+        Rigidbody2D rb = h.GetComponent<Rigidbody2D>();
+        BoxCollider2D col = h.GetComponent<BoxCollider2D>(); //j'ai ajouté ça mais pas sur
+        /* if (rb != null)
+        {
+            rb.bodyType = RigidbodyType2D.Kinematic;
+            rb.linearVelocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+        }
+        //Physics2D.IgnoreCollision(h.GetComponent<Collider2D>(), GetComponent<Collider2D>(), true);
 
 
-
-            yield return new WaitForSeconds(2f);
+        */
         //ON SORT L'OBJET UD POT
         h.transform.parent = null;
-        heldObject = new List<GameObject>();
+
+        if (rb != null)
+            rb.bodyType = RigidbodyType2D.Dynamic;
+       // if (col != null) col.enabled = true;
+            
+        
+            isCooking = false;
 
     }
 
