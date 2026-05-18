@@ -2,33 +2,44 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    
     [Header("Move variables")]
-    [SerializeField] float moveSpeed= 5f;
+    [SerializeField] float moveSpeed = 5f;
     [SerializeField] float sprintSpeed = 10f;
-    [SerializeField] float acceleration= 20f;
+    [SerializeField] float acceleration = 20f;
 
     [Header("Gravity/Jump")]
     [SerializeField] float gravity = -10f;
     [SerializeField] float jumpForce = 1.5f;
 
-
     Rigidbody2D rb;
     float InputX;
     public LayerMask groundLayer;
+
+    [Header("Ground Check")]
+    public Transform groundCheck;
+    public float groundCheckRadius = 0.2f;
+    private bool isGrounded;
+    private bool wasGrounded;
+
+
 
     [Header("Health")]
     public int MaxHealth = 100;
     public float currentHealth;
 
+    [Header("No Battery UI")]
+    public GameObject noBatteryScreen;
+    private bool noBattery = false;
+
     [Header("Animation")]
-    private Animator marche;
+    private Animator animator;
     private string walk = "Marche";
+    private bool isJumping = false;
+
 
     float currentSpeed;
 
-
-    void Awake()    
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
@@ -37,53 +48,62 @@ public class Character : MonoBehaviour
     {
         currentHealth = MaxHealth;
         InvokeRepeating("DecreaseHealth", 1f, 1f);
-
-        marche = GetComponentInChildren<Animator>();
+        animator = GetComponentInChildren<Animator>();
+        noBatteryScreen.SetActive(false);
     }
 
-
-    // Update is called once per frame
     void Update()
     {
+        if (currentHealth <= 0 && !noBattery)
+            BatteryEmpty();
+
+        if (noBattery)
+            return;
+
         InputX = Input.GetAxisRaw("Horizontal");
 
-        bool isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 1.1f, groundLayer);
 
-        if (Input.GetButtonDown("Jump") && isGrounded) rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
-       if (Input.GetKey(KeyCode.LeftShift))
-           currentSpeed = sprintSpeed;
-       else
-           currentSpeed = moveSpeed;
-
-        if (InputX != 0)
+        // SAUT
+        if (Input.GetButtonDown("Jump") && isGrounded && !isJumping)
         {
-            marche.SetBool(walk, true);
+            isJumping = true;
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            animator.SetBool("Saut", true);
         }
+
+        if (isGrounded && rb.linearVelocity.y <= 0)
+        {
+            isJumping = false;
+            animator.SetBool("Saut", false);
+        }
+
+
+        // CHUTE
+        if (rb.linearVelocity.y < -0.1f && !isGrounded)
+            animator.SetBool("Saut", true);
+
+        // VITESSE
+        if (Input.GetKey(KeyCode.LeftShift))
+            currentSpeed = sprintSpeed;
         else
-        {
-            marche.SetBool(walk, false);
-        }
+            currentSpeed = moveSpeed;
 
-
-       //if (currentHealth > 0)
-              //currentHealth -= (int)(healthdown * Time.deltaTime);
-      //currentHealth = Mathf.Max(currentHealth, 0);
-        //Debug.Log("Santé: " + currentHealth);
-
-
-
-        //input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        //input.Normalize();
+        // MARCHE 
+        if (!isJumping)
+            animator.SetBool(walk, InputX != 0);
+        else
+            animator.SetBool(walk, false);
     }
 
+    
+
     void FixedUpdate()
-    { 
+    {
         var v = rb.linearVelocity;
         v.x = InputX * currentSpeed;
-
         rb.linearVelocity = v;
-        // rb.linearVelocity = input * moveSpeed;
     }
 
     void DecreaseHealth()
@@ -92,12 +112,21 @@ public class Character : MonoBehaviour
         {
             currentHealth -= 0.2f;
             currentHealth = Mathf.Max(currentHealth, 0f);
-           // Debug.Log("Santé : " + currentHealth);
         }
         else
         {
             Debug.Log("Personnage mort !");
-            CancelInvoke("DecreaseHealth"); // arrête quand mort
+            CancelInvoke("DecreaseHealth");
         }
+    }
+
+    void BatteryEmpty()
+    {
+        noBattery = true;
+        Debug.Log("BATTERY EMPTY");
+        noBatteryScreen.SetActive(true);
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

@@ -4,9 +4,9 @@ public class ParallaxLayerSettings : MonoBehaviour
 {
    [Tooltip("Facteur Vertical (0= follow camera | 1= static")]
     [Range(0f, 1f)]
-    public float speedX = 0.8f;
+    public float speedX = 0.9f;
 
     [Tooltip("Facteur Vertical (0= follow camera | 1= static")]
     [Range(0f, 1f)]
-    public float speedY = 0.2f;
+    public float speedY = 0.5f;
 }
