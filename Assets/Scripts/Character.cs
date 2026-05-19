@@ -31,6 +31,10 @@ public class Character : MonoBehaviour
     public GameObject noBatteryScreen;
     private bool noBattery = false;
 
+    [Header("Respawn")]
+    public Transform respawnPoint;
+
+
     [Header("Animation")]
     private Animator animator;
     private string walk = "Marche";
@@ -118,6 +122,25 @@ public class Character : MonoBehaviour
             Debug.Log("Personnage mort !");
             CancelInvoke("DecreaseHealth");
         }
+    }
+
+public void Retry()
+{
+    Time.timeScale = 1f;
+
+    currentHealth = MaxHealth;
+
+    noBattery = false;
+
+    noBatteryScreen.SetActive(false);
+
+    transform.position = respawnPoint.position;
+      
+}
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
     void BatteryEmpty()

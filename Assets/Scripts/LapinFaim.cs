@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LapinFaim : MonoBehaviour
 {
-    public float detectionRange = 1.5f;
+    public float detectionRange = 0.5f;
     private Animator anim;
-    private bool nourri = false;
+    public static bool lapinNourri = false;
+    public Transform detectionPoint;
+
 
     void Start()
     {
@@ -16,7 +19,7 @@ public class LapinFaim : MonoBehaviour
 
     void Update()
     {
-        if (nourri) return; //  plus rien à faire si déjà nourri
+        if (lapinNourri) return; //  plus rien à faire si déjà nourri
 
         //  cherche une brochette proche
         GameObject borchette = TrouverBorchette();
@@ -36,7 +39,7 @@ public class LapinFaim : MonoBehaviour
         {
             if (!obj.name.Contains("Borchette")) continue; //  filtre par nom
 
-            float dist = Vector2.Distance(transform.position, obj.transform.position);
+            float dist = Vector2.Distance(detectionPoint.position, obj.transform.position);
             if (dist <= detectionRange)
                 return obj;
         }
@@ -45,11 +48,21 @@ public class LapinFaim : MonoBehaviour
 
     void Absorber(GameObject borchette)
     {
-        nourri = true;
+        lapinNourri = true;
+        VerifierFin();
         Destroy(borchette);
         Debug.Log("Controller : " + anim.runtimeAnimatorController);
         Debug.Log("Tentative SetBool estNourri");
         anim.SetBool("estNourri", true);
         Debug.Log("SetBool fait, estNourri = " + anim.GetBool("estNourri"));
     }
+
+    void VerifierFin()
+    {
+        if (lapinNourri && RenardFaim.renardNourri)
+        {
+            SceneManager.LoadScene("FinDuJEu");
+        }
+    }
+
 }

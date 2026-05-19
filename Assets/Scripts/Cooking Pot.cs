@@ -77,7 +77,7 @@ public class CookingPot : MonoBehaviour
             h = Instantiate(TrashRecipe, transform.position + new Vector3(0f, 1.5f, 0f), Quaternion.identity);
 
         Rigidbody2D rb = h.GetComponent<Rigidbody2D>();
-        BoxCollider2D col = h.GetComponent<BoxCollider2D>(); //j'ai ajouté ça mais pas sur
+        BoxCollider2D col = h.GetComponent<BoxCollider2D>(); //j'ai ajoutï¿½ ï¿½a mais pas sur
         /* if (rb != null)
         {
             rb.bodyType = RigidbodyType2D.Kinematic;

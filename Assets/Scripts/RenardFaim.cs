@@ -1,22 +1,24 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RenardFaim : MonoBehaviour
 {
-    public float detectionRange = 1.5f;
+    public float detectionRange = 0.5f;
     private Animator anim;
-    private bool nourri = false;
+    public static bool renardNourri = false;
+    public Transform detectionPoint;
 
     void Start()
     {
         
         anim = GetComponentInChildren<Animator>();
-        Debug.Log("Animator trouvé : " + anim); 
+        Debug.Log("Animator trouvï¿½ : " + anim); 
         Debug.Log("Controller : " + anim.runtimeAnimatorController);
     }
 
     void Update()
     {
-        if (nourri) return; 
+        if (renardNourri) return; 
 
         
         GameObject tarte = TrouverTarte();
@@ -29,14 +31,14 @@ public class RenardFaim : MonoBehaviour
 
     GameObject TrouverTarte()
     {
-        // Cherche tous les objets taggés "Objet"
+        // Cherche tous les objets taggï¿½s "Objet"
         GameObject[] objets = GameObject.FindGameObjectsWithTag("Objet");
 
         foreach (var obj in objets)
         {
             if (!obj.name.Contains("Tarte")) continue; //  filtre par nom
 
-            float dist = Vector2.Distance(transform.position, obj.transform.position);
+            float dist = Vector2.Distance(detectionPoint.position, obj.transform.position);
             if (dist <= detectionRange)
                 return obj;
         }
@@ -45,11 +47,21 @@ public class RenardFaim : MonoBehaviour
 
     void Absorber(GameObject tarte)
     {
-        nourri = true;
+        renardNourri = true;
+        VerifierFin();
         Destroy(tarte);
         Debug.Log("Controller : " + anim.runtimeAnimatorController);
         Debug.Log("Tentative SetBool estNourri");
         anim.SetBool("estNourri", true);
         Debug.Log("SetBool fait, estNourri = " + anim.GetBool("estNourri"));
     }
+
+    void VerifierFin()
+    {
+        if (renardNourri && LapinFaim.lapinNourri)
+        {
+            SceneManager.LoadScene("FinDuJEu");
+        }
+    }
+
 }
