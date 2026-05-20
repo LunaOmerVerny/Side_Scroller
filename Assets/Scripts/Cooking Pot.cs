@@ -29,8 +29,6 @@ public class CookingPot : MonoBehaviour
             collision.gameObject.GetComponent<Rigidbody2D>().linearVelocity = Vector3.zero;
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-            //held.transform.position = this.transform.position + new Vector3(0, 0.5f, 0);
-            //held.transform.position = this.transform.position;
             collision.gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             collision.gameObject.transform.position = target.position + new Vector3(heldObject.Count * 1, 0f, 0f);
             heldObject.Add(collision.gameObject);

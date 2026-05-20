@@ -11,9 +11,8 @@ public class LapinFaim : MonoBehaviour
 
     void Start()
     {
-        //  récupère l'Animator sur le child LAPIN FAIM 0000_0
         anim = GetComponentInChildren<Animator>();
-        Debug.Log("Animator trouvé : " + anim); // ✅ vérifie qu'il est trouvé
+        Debug.Log("Animator trouvé : " + anim); 
         Debug.Log("Controller : " + anim.runtimeAnimatorController);
     }
 
@@ -32,7 +31,6 @@ public class LapinFaim : MonoBehaviour
 
     GameObject TrouverBorchette()
     {
-        // Cherche tous les objets taggés "Objet"
         GameObject[] objets = GameObject.FindGameObjectsWithTag("Objet");
 
         foreach (var obj in objets)

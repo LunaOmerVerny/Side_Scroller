@@ -56,7 +56,7 @@ public class GrabObject : MonoBehaviour
     }
     IEnumerator EnableColliderDelayed(GameObject obj)
     {
-        yield return new WaitForSeconds(0.3f); // laisse le temps de s'éloigner
+        yield return new WaitForSeconds(0.3f); 
         if (obj != null)
             obj.GetComponent<BoxCollider2D>().enabled = true;
     }
@@ -92,34 +92,6 @@ public class GrabObject : MonoBehaviour
         heldObject.Add(obj);
         Debug.Log("Objet récupéré depuis l'étagère : " + obj.name);
 
-
-
-
-
-
-
-        /*
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.E)) TryGrab();
-            if (Input.GetKeyDown(KeyCode.A) && heldObject != null) Drop();
-        }
-        void TryGrab()
-        {
-           Collider2D hit = Physics2D.OverlapCircle(transform.position, 1f);
-            if (hit = null) return;
-
-           // heldObject = hit.gameObject;
-            heldObject.transform.SetParent(transform);
-            heldObject.transform.localPosition = new Vector3(0f, 0f,0.5f);
-        }
-
-        void Drop()
-        {
-            heldObject.transform.SetParent(null);
-            heldObject = null;
-        }
-        */
 
     }
 }

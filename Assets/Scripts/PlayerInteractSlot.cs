@@ -39,18 +39,16 @@ public class PlayerInteractSlot : MonoBehaviour
 
         if (nearest != null)
         {
-            // prend le dernier objet porté
+            
             GameObject objToPlace = grabScript.heldObject[grabScript.heldObject.Count - 1];
 
             nearest.currentItem = objToPlace;
             objToPlace.transform.SetParent(nearest.transform);
             objToPlace.transform.localPosition = Vector3.zero;
 
-            // ✅ remet la physique normale comme dans GrabObject
             objToPlace.GetComponent<BoxCollider2D>().enabled = true;
             objToPlace.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
 
-            // ✅ retire de la liste de GrabObject
             grabScript.heldObject.RemoveAt(grabScript.heldObject.Count - 1);
         }
         else
@@ -66,7 +64,7 @@ public class PlayerInteractSlot : MonoBehaviour
 
         foreach (var slot in cachedSlots)
         {
-            if (!slot.IsEmpty) continue; //  cherche uniquement les slots vides
+            if (!slot.IsEmpty) continue; //  cherche les slots vides
 
             float dist = Vector2.Distance(transform.position, slot.transform.position);
             Debug.Log($"Slot {slot.name} | dist: {dist:F2} | IsEmpty: {slot.IsEmpty}");

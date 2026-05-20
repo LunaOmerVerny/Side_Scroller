@@ -31,12 +31,11 @@ public class RenardFaim : MonoBehaviour
 
     GameObject TrouverTarte()
     {
-        // Cherche tous les objets tagg�s "Objet"
         GameObject[] objets = GameObject.FindGameObjectsWithTag("Objet");
 
         foreach (var obj in objets)
         {
-            if (!obj.name.Contains("Tarte")) continue; //  filtre par nom
+            if (!obj.name.Contains("Tarte")) continue;
 
             float dist = Vector2.Distance(detectionPoint.position, obj.transform.position);
             if (dist <= detectionRange)

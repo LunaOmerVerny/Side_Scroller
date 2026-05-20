@@ -1,18 +1,17 @@
-﻿using System.Collections;  // ← nécessaire pour IEnumerator
+﻿using System.Collections;  
 using UnityEngine;
 
 public class HouseVisibility : MonoBehaviour
 {
     [Header("Visuels")]
-    public GameObject exterior;        // Toit + murs extérieurs
-    public GameObject interior;        // Intérieur (si caché de base)
+    public GameObject exterior;        
+    public GameObject interior;        
 
     [Header("Options")]
-    public bool fadeInstead = false;   // true = transparence, false = disparition
-    public float fadeAlpha = 0.05f;     // Opacité si on fait un fade
-    public float fadeDuration = 0.6f;   // durée du fade
-    private Coroutine currentFade;      // pour pas avoir deux fades en même temps
-
+    public bool fadeInstead = false;   
+    public float fadeAlpha = 0.05f;     
+    public float fadeDuration = 0.6f;   
+    private Coroutine currentFade;      
     private SpriteRenderer[] extRenderers;
     private bool playerInside = false;
 
@@ -63,7 +62,7 @@ public class HouseVisibility : MonoBehaviour
         {
             elapsed += Time.deltaTime;
             float t = elapsed / fadeDuration;
-            float tSmooth = t * t * (3f - 2f * t); // smoothstep
+            float tSmooth = t * t * (3f - 2f * t); 
             float alpha = Mathf.Lerp(startAlpha, targetAlpha, tSmooth);
 
             foreach (var sr in extRenderers)
